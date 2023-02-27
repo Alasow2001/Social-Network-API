@@ -26,7 +26,8 @@ const thoughtList = [
     username: "mark79",
 
     reactions: {
-      reactionBody: "I would give it 20 years until it becomes the norm"
+      reactionBody: "I would give it 20 years until it becomes the norm",
+      username: "leantino"
     }
   },
 
@@ -35,7 +36,8 @@ const thoughtList = [
     username: "phill#89",
 
     reaction: {
-      reactionBody: "Can't wait to have one!"
+      reactionBody: "Can't wait to have one!",
+      username: "felix"
     }
   }
 ]
