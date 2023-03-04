@@ -13,6 +13,7 @@ module.exports = {
       .then((thought) =>
         !thought
           ? res.status(404).json({ message: 'No Thought with that ID' })
+          // Displays the single thought based on the id, the author of the thought as well as any reactions made on that thought
           : res.json(thought)
       )
       .catch((err) => res.status(500).json(err));
@@ -64,6 +65,7 @@ module.exports = {
       .then((thought) =>
       !thought
       ? res.status(404).json({ message: 'No Thought with this id!' })
+      // Looks through the user to update the amount of thoughts they have
           : User.findOneAndUpdate(
               { thoughts: req.params.thoughtId },
               { $pull: { thoughts: req.params.thoughtId } },
@@ -73,7 +75,8 @@ module.exports = {
       .then((user) =>
         !user
           ? res.status(404).json({
-              message: 'Thought created but no user with this id!',
+            // Sends an error declearing that a thought was deleted but there wasn't a user in the database 
+              message: 'Thought removed but no user with this id!',
             })
           : res.json({ message: 'Thought successfully deleted!' })
       )
